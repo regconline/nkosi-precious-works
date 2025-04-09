@@ -4,410 +4,300 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nkosi Precision Works and Engineering</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-        }
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
         }
         .gallery-img {
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
         .gallery-img:hover {
-            opacity: 0.8;
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
     </style>
 </head>
 <body class="font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-10">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div>
-                        <a href="#" class="flex items-center py-4">
-                            <span class="font-bold text-xl text-blue-600">NKOSI</span>
-                            <span class="font-medium text-gray-700 ml-2">Precision Works & Engineering</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="#" class="py-4 px-2 text-blue-600 border-b-4 border-blue-600 font-semibold">Home</a>
-                    <a href="#about" class="py-4 px-2 text-gray-600 font-semibold hover:text-blue-600 transition duration-300">About</a>
-                    <a href="#services" class="py-4 px-2 text-gray-600 font-semibold hover:text-blue-600 transition duration-300">Services</a>
-                    <a href="#gallery" class="py-4 px-2 text-gray-600 font-semibold hover:text-blue-600 transition duration-300">Gallery</a>
-                    <a href="#why-choose-us" class="py-4 px-2 text-gray-600 font-semibold hover:text-blue-600 transition duration-300">Why Us</a>
-                    <a href="#contact" class="py-4 px-2 text-gray-600 font-semibold hover:text-blue-600 transition duration-300">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="mobile-menu-button outline-none">
-                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+    <nav class="bg-orange-600 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Nkosi Precision</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-orange-200 transition">About</a>
+                <a href="#services" class="hover:text-orange-200 transition">Services</a>
+                <a href="#gallery" class="hover:text-orange-200 transition">Gallery</a>
+                <a href="#contact" class="hover:text-orange-200 transition">Contact</a>
             </div>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-        <div class="hidden mobile-menu md:hidden">
-            <ul class="bg-white shadow-lg">
-                <li><a href="#" class="block text-sm px-4 py-4 text-blue-600 bg-blue-100 font-semibold">Home</a></li>
-                <li><a href="#about" class="block text-sm px-4 py-4 text-gray-600 hover:bg-blue-50 transition duration-300">About</a></li>
-                <li><a href="#services" class="block text-sm px-4 py-4 text-gray-600 hover:bg-blue-50 transition duration-300">Services</a></li>
-                <li><a href="#gallery" class="block text-sm px-4 py-4 text-gray-600 hover:bg-blue-50 transition duration-300">Gallery</a></li>
-                <li><a href="#why-choose-us" class="block text-sm px-4 py-4 text-gray-600 hover:bg-blue-50 transition duration-300">Why Us</a></li>
-                <li><a href="#contact" class="block text-sm px-4 py-4 text-gray-600 hover:bg-blue-50 transition duration-300">Contact</a></li>
-            </ul>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-orange-700 px-6 py-2" id="mobile-menu">
+            <a href="#about" class="block py-2 hover:text-orange-200 transition">About</a>
+            <a href="#services" class="block py-2 hover:text-orange-200 transition">Services</a>
+            <a href="#gallery" class="block py-2 hover:text-orange-200 transition">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-orange-200 transition">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-gradient min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Nkosi Precision Works <span class="block md:inline">&amp; Engineering</span></h1>
-                <p class="text-xl md:text-2xl font-medium text-blue-100 mb-10">Precision. Strength. Excellence.</p>
-                <div class="flex flex-col md:flex-row justify-center gap-4">
-                    <a href="#gallery" class="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">View Our Work</a>
-                    <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Request a Quote</a>
-                </div>
+    <section class="hero min-h-screen flex items-center justify-center text-white text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Nkosi Precision Works & Engineering</h1>
+            <p class="text-xl md:text-2xl mb-8">Precision. Strength. Excellence.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#gallery" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300">View Our Work</a>
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-orange-600 px-8 py-3 rounded-lg font-medium transition duration-300">Request a Quote</a>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-                    <img src="/api/placeholder/600/400" alt="About Nkosi Precision Works" class="rounded-lg shadow-xl">
+    <!-- About Us -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1581093057302-20e39f3d16b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Factory" class="rounded-lg shadow-xl">
                 </div>
                 <div class="md:w-1/2">
-                    <p class="text-gray-600 mb-4 text-lg">Founded with a vision of excellence, Nkosi Precision Works & Engineering has established itself as a leading provider of premium manufacturing and fabrication services in the industry.</p>
-                    <p class="text-gray-600 mb-6 text-lg">Our core expertise spans across three main areas:</p>
-                    <ul class="mb-6">
-                        <li class="flex items-center mb-3">
-                            <span class="text-blue-600 mr-3"><i class="fas fa-square"></i></span>
-                            <span class="text-gray-700 font-medium">Premium Brick Manufacturing</span>
-                        </li>
-                        <li class="flex items-center mb-3">
-                            <span class="text-blue-600 mr-3"><i class="fas fa-cog"></i></span>
-                            <span class="text-gray-700 font-medium">Custom Steel Fabrication</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-600 mr-3"><i class="fas fa-drafting-compass"></i></span>
-                            <span class="text-gray-700 font-medium">Precision Aluminum Works</span>
-                        </li>
-                    </ul>
-                    <p class="text-gray-600 text-lg">With a team of skilled professionals and state-of-the-art equipment, we deliver exceptional quality and precision in every project we undertake.</p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Nkosi Precision Works and Engineering is a premier manufacturer and fabricator specializing in high-quality construction materials and metal works.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        With over 15 years of experience, we deliver precision-engineered solutions for residential, commercial, and industrial projects.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-bricks text-orange-600"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Brick Manufacturing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-hammer text-orange-600"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Steel Fabrication</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-industry text-orange-600"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Aluminum Works</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Our Services</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">We provide top-tier manufacturing and fabrication services tailored to meet your specific requirements.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-gray-50 rounded-lg p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-building text-white text-2xl"></i>
+                <div class="bg-gray-50 rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border border-gray-100 hover:border-orange-200">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bricks text-orange-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Brick Manufacturing</h3>
-                    <p class="text-gray-600 text-center">We produce high-quality bricks using premium materials and advanced manufacturing techniques, ensuring durability and consistency in every batch.</p>
-                    <ul class="mt-4">
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Face Bricks</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Pavers & Blocks</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Custom Solutions</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Brick Manufacturing</h3>
+                    <p class="text-gray-700 text-center">
+                        High-quality, durable bricks for all construction needs. Custom sizes and colors available.
+                    </p>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-gray-50 rounded-lg p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-industry text-white text-2xl"></i>
+                <div class="bg-gray-50 rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border border-gray-100 hover:border-orange-200">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-hammer text-orange-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Steel Fabrication</h3>
-                    <p class="text-gray-600 text-center">Our steel fabrication services combine precision engineering with expert craftsmanship to deliver robust and reliable steel structures.</p>
-                    <ul class="mt-4">
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Structural Steel</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Metal Frameworks</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Custom Fabrication</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Steel Fabrication</h3>
+                    <p class="text-gray-700 text-center">
+                        Precision steel works including structural frames, gates, and custom metal designs.
+                    </p>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-gray-50 rounded-lg p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-drafting-compass text-white text-2xl"></i>
+                <div class="bg-gray-50 rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border border-gray-100 hover:border-orange-200">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-industry text-orange-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Aluminum Works</h3>
-                    <p class="text-gray-600 text-center">We specialize in precision aluminum fabrication, creating lightweight yet sturdy solutions for various applications.</p>
-                    <ul class="mt-4">
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Window Frames</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Decorative Elements</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-600 mr-2"><i class="fas fa-check-circle"></i></span>
-                            <span class="text-gray-700">Architectural Pieces</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Aluminum Works</h3>
+                    <p class="text-gray-700 text-center">
+                        Custom aluminum fabrication for windows, doors, railings, and architectural features.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Our Work</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">Browse through our portfolio of completed projects showcasing our expertise in brick manufacturing, steel and aluminum fabrication.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Brick Project" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Premium Face Bricks</h4>
-                            <p class="text-gray-600 text-sm">Commercial Building Project</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Gallery Item 2 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Steel Project" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Steel Framework</h4>
-                            <p class="text-gray-600 text-sm">Industrial Facility</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Gallery Item 3 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Aluminum Project" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Aluminum Components</h4>
-                            <p class="text-gray-600 text-sm">Modern Office Complex</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Gallery Item 4 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Brick Pavers" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Decorative Pavers</h4>
-                            <p class="text-gray-600 text-sm">Public Plaza Project</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Gallery Item 5 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Steel Fabrication" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Custom Steel Structure</h4>
-                            <p class="text-gray-600 text-sm">Architectural Feature</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Gallery Item 6 -->
-                <a href="/api/placeholder/800/500" data-lightbox="gallery" class="gallery-item">
-                    <div class="overflow-hidden rounded-lg shadow-lg">
-                        <img src="/api/placeholder/400/300" alt="Aluminum Frames" class="w-full h-64 object-cover gallery-img">
-                        <div class="p-4 bg-white">
-                            <h4 class="font-bold text-gray-800">Aluminum Window Frames</h4>
-                            <p class="text-gray-600 text-sm">Residential Development</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Why Choose Us</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">What sets Nkosi Precision Works & Engineering apart from the competition.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Reason 1 -->
-                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-medal text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Uncompromising Quality</h3>
-                    <p class="text-gray-600 text-center">We maintain the highest standards of quality in every aspect of our work, from material selection to final delivery. Our rigorous quality control processes ensure that each product meets or exceeds industry standards.</p>
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Work</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery items would go here -->
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Brick work" class="w-full h-64 object-cover">
                 </div>
-                
-                <!-- Reason 2 -->
-                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-tools text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Custom Solutions</h3>
-                    <p class="text-gray-600 text-center">We understand that every project is unique. Our team works closely with you to develop tailored solutions that meet your specific requirements, ensuring perfect fit and functionality.</p>
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1518544866335-95a8bfe0b1fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Steel fabrication" class="w-full h-64 object-cover">
                 </div>
-                
-                <!-- Reason 3 -->
-                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-clock text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Timely Delivery</h3>
-                    <p class="text-gray-600 text-center">We respect your timelines and commit to delivering projects on schedule without compromising on quality. Our efficient processes and dedicated team ensure timely completion of all projects.</p>
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Aluminum works" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Brick manufacturing" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1605153864439-953723371616?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Steel works" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-img overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1583845112203-2932990235b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Aluminum fabrication" class="w-full h-64 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Contact Us</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us to discuss your project requirements or request a quote.</p>
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-orange-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Nkosi Precision</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-award text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Quality Materials</h3>
+                    <p>We use only the highest grade materials and rigorous quality control processes.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-tools text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Solutions</h3>
+                    <p>Tailored fabrication to meet your exact specifications and project requirements.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Timely Delivery</h3>
+                    <p>We respect your timeline with efficient production and reliable scheduling.</p>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Request a Quote</h3>
-                    <form id="quoteForm">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Request a Quote</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <p class="text-red-500 text-sm mt-1 hidden" id="nameError">Please enter your name</p>
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <p class="text-red-500 text-sm mt-1 hidden" id="emailError">Please enter a valid email</p>
                         </div>
-                        <div class="mb-4">
-                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
-                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                <option value="">Select a Service</option>
+                        <div>
+                            <label for="service" class="block text-gray-700 mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Select a service</option>
                                 <option value="brick">Brick Manufacturing</option>
                                 <option value="steel">Steel Fabrication</option>
                                 <option value="aluminum">Aluminum Works</option>
-                                <option value="other">Other/Multiple Services</option>
+                                <option value="other">Other</option>
                             </select>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="serviceError">Please select a service</p>
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="messageError">Please enter your message</p>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Submit Request</button>
+                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium w-full transition duration-300">
+                            Submit Request
+                        </button>
                     </form>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Contact Information</h3>
-                    <div class="space-y-6">
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                    <div class="space-y-4">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <span class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </span>
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-orange-600"></i>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Our Location</h4>
-                                <p class="mt-1 text-gray-600">123 Industrial Avenue<br>Business Park, Suite 200<br>Johannesburg, South Africa</p>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Address</h4>
+                                <p class="text-gray-700">123 Industrial Park, Johannesburg, South Africa</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <span class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white">
-                                    <i class="fas fa-phone-alt"></i>
-                                </span>
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-orange-600"></i>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Phone</h4>
-                                <p class="mt-1 text-gray-600">+27 11 123 4567</p>
-                                <p class="text-gray-600">+27 82 987 6543 (Mobile)</p>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Phone</h4>
+                                <p class="text-gray-700">+27 11 123 4567</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <span class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-orange-600"></i>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Email</h4>
-                                <p class="mt-1 text-gray-600">info@nkosiprecision.com</p>
-                                <p class="text-gray-600">quotes@nkosiprecision.com</p>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-700">info@nkosiprecision.co.za</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <span class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white">
-                                    <i class="fas fa-clock"></i>
-                                </span>
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-orange-600"></i>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Business Hours</h4>
-                                <p class="mt-1 text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                                <p class="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
-                                <p class="text-gray-600">Sunday: Closed</p>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Business Hours</h4>
+                                <p class="text-gray-700">Mon-Fri: 8:00 AM - 5:00 PM</p>
+                                <p class="text-gray-700">Sat: 9:00 AM - 1:00 PM</p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-orange-600 text-white p-3 rounded-full hover:bg-orange-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-orange-600 text-white p-3 rounded-full hover:bg-orange-700 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-orange-600 text-white p-3 rounded-full hover:bg-orange-700 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-orange-600 text-white p-3 rounded-full hover:bg-orange-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -417,18 +307,159 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-1">
-                    <h3 class="text-xl font-bold mb-4">Nkosi Precision</h3>
-                    <p class="text-gray-400 mb-4">Delivering excellence in brick manufacturing, steel and aluminum fabrication.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Nkosi Precision</h3>
+                    <p class="text-gray-400 max-w-md">
+                        Delivering precision engineering and quality manufacturing solutions since 2008.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                            <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Brick Manufacturing</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Steel Fabrication</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Aluminum Works</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400">123 Industrial Park</li>
+                            <li class="text-gray-400">Johannesburg, SA</li>
+                            <li class="text-gray-400">+27 11 123 4567</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Nkosi Precision Works and Engineering. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="relative max-w-4xl w-full p-4">
+            <button id="close-lightbox" class="absolute -top-12 right-0 text-white text-3xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="" class="w-full max-h-screen object-contain">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Mobile menu toggle
+            $('#menu-btn').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 80,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // Form validation
+            $('#contactForm').submit(function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Validate name
+                if ($('#name').val().trim() === '') {
+                    $('#nameError').removeClass('hidden');
+                    isValid = false;
+                } else {
+                    $('#nameError').addClass('hidden');
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test($('#email').val().trim())) {
+                    $('#emailError').removeClass('hidden');
+                    isValid = false;
+                } else {
+                    $('#emailError').addClass('hidden');
+                }
+                
+                // Validate service
+                if ($('#service').val() === '') {
+                    $('#serviceError').removeClass('hidden');
+                    isValid = false;
+                } else {
+                    $('#serviceError').addClass('hidden');
+                }
+                
+                // Validate message
+                if ($('#message').val().trim() === '') {
+                    $('#messageError').removeClass('hidden');
+                    isValid = false;
+                } else {
+                    $('#messageError').addClass('hidden');
+                }
+                
+                // If form is valid, show success message
+                if (isValid) {
+                    alert('Thank you for your request! We will contact you shortly.');
+                    $('#contactForm')[0].reset();
+                }
+            });
+
+            // Gallery lightbox
+            $('.gallery-img').click(function() {
+                const imgSrc = $(this).find('img').attr('src');
+                $('#lightbox-img').attr('src', imgSrc);
+                $('#lightbox').removeClass('hidden');
+                $('body').css('overflow', 'hidden');
+            });
+
+            $('#close-lightbox').click(function() {
+                $('#lightbox').addClass('hidden');
+                $('body').css('overflow', 'auto');
+            });
+
+            // Close lightbox when clicking outside the image
+            $('#lightbox').click(function(e) {
+                if (e.target.id === 'lightbox') {
+                    $('#lightbox').addClass('hidden');
+                    $('body').css('overflow', 'auto');
+                }
+            });
+        });
+    </script>
+</body>
+                                                                                                </html>
